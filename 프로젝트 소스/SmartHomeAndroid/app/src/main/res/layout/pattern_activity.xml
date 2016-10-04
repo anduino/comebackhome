@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="center_vertical"
+    android:background="#1F2035"
+    android:orientation="vertical">
+
+    <!--title start-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#1F2035">
+        <ImageButton
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:background="@drawable/btn_back_shadow"
+            android:layout_gravity="center_vertical"
+            android:onClick="patternBtnClick"
+            android:id="@+id/backBtn"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pattern"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="30sp"/>
+    </LinearLayout>
+    <!--title end-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#515362"
+        android:gravity="center_horizontal"
+        android:clickable="true"
+        android:id="@+id/updateBtn"
+        android:onClick="patternBtnClick">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/pattern_icon_down_white"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:text="  Download patterns"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone"
+        android:id="@+id/mapContainer">
+    <fragment
+        android:id="@+id/map2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_gravity="center_horizontal"
+        android:name
+            ="com.google.android.gms.maps.MapFragment" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <ListView
+        android:id="@+id/plist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:choiceMode="singleChoice"
+        android:contextClickable="true"
+        android:clickable="true"/>
+    </ScrollView>
+</LinearLayout>

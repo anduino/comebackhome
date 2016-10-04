@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "383553580943",
+    "project_id": "graduationproject-53a52"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:383553580943:android:219a1e724865574e",
+        "android_client_info": {
+          "package_name": "com.example.graduation.graduationproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKMsPDEh39zm0mQLXRescCpnj92AE9q1Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        #container {
+            align-content: center;
+            margin: 0 auto;
+            width: 600px;
+            ;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="../static/img/logo.png">
+
+        <h1 style="text-align:center;">관리자 페이지</h1>
+        <div id="registerTable">
+            <h2> 현재 등록된 기기 </h2>
+            <table border="1" cellspacing="0">
+                <th style="width:200px;">
+                    사용자 이름
+                </th>
+                <th style="width:200px;">
+                    디바이스 아이디
+                </th>
+                <th style="width:200px;">
+                    삭제
+                </th>
+                {% if( regist|length == 0 ) %}
+                <tr>
+                    <td style="width:200px; text-align:center;" colspan="3">등록된 기기가 없습니다.</td>
+                </tr>
+                {%else%}
+                {% for item in regist %}
+                <tr>
+                    <td style="width:200px;"> {{item.uname}}</td>
+                    <td style="width:200px;"> {{item.aid}}</td>
+                    <td style="width:200px; text-align:center;"> <button id="closebtn" type="button" onclick="deleteBtn('{{item.aid}}');">삭제</button></td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </table>
+        </div>
+        <div id="unregisteredTable">
+            <h2> 현재 신청중 기기 </h2>
+            <table border="1" cellspacing="0">
+                <th style="width:200px;">
+                    사용자 이름
+                </th>
+                <th style="width:200px;">
+                    디바이스 아이디
+                </th>
+                <th style="width:200px;">
+                    승인
+                </th>
+                {% if( unregist|length == 0 ) %}
+                <tr>
+                    <td style ="width:200px; text-align:center;" colspan="3">신청중인 기기가 없습니다.</td>
+                </tr>
+                {%else%}
+                {% for item in unregist %}
+                <tr>
+                    <td style="width:200px;"> {{item.uname}}</td>
+                    <td style="width:200px;"> {{item.aid}}</td>
+                    <td style="width:200px; text-align:center;"> <button id="approvebtn" type="button" onclick="approveBtn('{{item.aid}}');">승인</button></td></td>
+                </tr>
+                {% endfor %}
+                {%endif%}
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function deleteBtn(name) {
+            location.replace("{{ url_for('deleteUser') }}" + "/" + name);
+            location.href("{{ url_for('deleteUser') }}" + "/" + name);              // 이동전 주소가 보임
+            history.go(-1);                                 // 이전페이지가기. ()안의 값이 현재페이지에 대한 상대좌표
+            location.reload();
+        }
+
+        function approveBtn(name) {
+            location.replace("{{ url_for('approveUser') }}" + "/" + name);
+            location.href("{{ url_for('approveUser') }}" + "/" + name);              // 이동전 주소가 보임
+            history.go(-1);                                 // 이전페이지가기. ()안의 값이 현재페이지에 대한 상대좌표
+            location.reload();
+        }
+    </script>
+</body>
+</html>

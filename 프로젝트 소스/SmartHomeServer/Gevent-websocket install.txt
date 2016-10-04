@@ -1,0 +1,17 @@
+C:\Users\Jihae>python -m pip install gevent-websocket
+
+C:\Users\Jihae>python -m pip install flask_sockets
+
+C:\Users\Jihae>python -m pip install gevent
+
+C:\Users\Jihae>python -m pip install --upgrade gevent
+
+C:\Users\Jihae>python -m pip install gevent==1.1rc3
+
+C:\Users\Jihae>pip install --upgrade gevent-websocket
+
+C:\Users\Jihae>pip install flask-socketio
+
+C:\Users\Jihae>pip install gevent
+
+C:\Users\Jihae>python version

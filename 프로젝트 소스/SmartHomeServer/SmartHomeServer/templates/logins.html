@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Anduino</title>
+    <style type="text/css">
+        #login {
+            align-content: center;
+            width: 600px;
+            
+            margin: 0 auto;
+        }
+
+        #loginform {
+            text-align: center;
+        }
+
+        input {
+            width: 150px;
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <img src="../static/img/logo.png">
+        <div id="loginform">
+
+
+            <h2>스마트홈 관리자 로그인</h2>
+            <form method="post" action="{{ url_for('requestLogin') }}">
+                <input type="text" placeholder="아이디" name="userid"><br />
+                <input type="password" placeholder="비밀번호" name="userpasswd"><br />
+                <div>
+                    <button type="submit" id="login_btn">
+                        로그인
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

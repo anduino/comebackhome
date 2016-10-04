@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GraduationProject</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_status">StatusActivity</string>
+    <string name="title_activity_map">MapActivity</string>
+    <string name="cel">℃</string>
+</resources>

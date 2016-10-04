@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple WebSockt</title>
+    <script type="text/javascript" src="../../../../../../static/js/jquery.js"></script>
+    <script>
+        var ws;
+        $(document).ready(function () {
+            WebSocketConnect();
+
+        });
+
+        function WebSocketConnect() {
+            try {
+                ws = new WebSocket('ws://203.252.182.96');
+                document.write("new socket");
+
+                //아두이노와 웹소켓이 연결되었을 때
+                ws.onopen = function (evt) {
+                    document.write("Connection open ...");
+                    ws.send("{{control[0]}}" + "/" + "{{control[1]}}");
+                }
+
+                //웹소켓이 끊어졌을때
+                ws.onclose = function (evt) {
+                    document.write("Connection closed.");
+                }    
+
+                //웹소켓에 이상이 발생하였을때
+                ws.onerror = function (evt) {
+                    document.write("error.." + evt.data);
+                }   
+
+                //아두이노로부터 데이터가 왔을 때
+                ws.onmessage = function (evt) {
+                    document.write("Received Message: " + evt.data);
+                }
+            } catch (exception) { status('Exception' + exception); }
+        }
+
+        
+    </script>
+</head>
+<body>
+</body>
+</html>
+
